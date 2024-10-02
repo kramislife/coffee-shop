@@ -53,7 +53,7 @@ const Hero = () => {
           <div
             ref={imageRef}
             style={imageStyle(imageInview)}
-            className="hidden lg:flex items-center justify-center"
+            className="lg:flex items-center justify-center"
           >
             <img src="/heroo.png" alt="" />
           </div>

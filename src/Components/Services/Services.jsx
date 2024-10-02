@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useInView } from "framer-motion";
 
 const Services = () => {
   const coffeeCards = [
@@ -45,27 +46,39 @@ const Services = () => {
     },
   ];
 
+  const servicesRef = useRef(null);
+
+  const servicesInView = useInView(servicesRef, { once: true });
+
+  const servicesStyle = (isInView) => ({
+    transform: isInView ? "none" : "translateY(-50px)",
+    opacity: isInView ? 2 : 0,
+    transition: "all 2s cubic-bezier(0.645, 0.045, 0.355, 2)",
+  });
+
   return (
     <section className="bg-background lg:h-[100vh] px-4">
       <div className="container py-14">
         <h1 className="text-4xl font-bold lg:leading-snug leading-tight text-center">
           Our Coffee Experience
         </h1>
-        <p className="text-md text-center text-gray-600 max-w-3xl mx-auto pt-5 leading-relaxed">
+        <p className="text-md text-center text-gray-600 max-w-3xl mx-auto py-5 leading-relaxed">
           From sourcing the finest beans to crafting the perfect brew, we offer
           a full range of coffee experiences tailored to ignite your senses.
           Whether you’re here for a quick cup or to savor every sip, we’ve got
           something for every coffee lover.
         </p>
-        <div className="flex flex-col lg:flex-row lg:space-x-3 lg:space-y-0 space-y-3 justify-center items-center lg:pt-12 pt-4">
+        <div className="flex flex-col lg:flex-row lg:space-x-3 lg:space-y-0 space-y-3 justify-center items-center lg:pt-5 pt-4">
           {coffeeCards.map((card) => (
             <Card
+              ref={servicesRef}
+              style={servicesStyle(servicesInView)}
               key={card.id}
               className="w-[350px] h-[80vh] drop-shadow-md flex flex-col justify-between"
             >
               <CardHeader className="p-4">
                 <img
-                  className="h-[43vh] w-full rounded-md object-cover"
+                  className="h-[40vh] w-full rounded-md object-cover"
                   src={card.img}
                   alt={card.title}
                 />
@@ -77,7 +90,7 @@ const Services = () => {
                 </CardDescription>
               </CardHeader>
               <CardFooter className="p-4">
-                <div className="flex justify-between w-full">
+                <div className="flex items-center justify-between w-full">
                   <div className="text-lg font-bold text-black">
                     {card.price}
                   </div>
