@@ -37,7 +37,7 @@ const Navbar = () => {
         <div className="container py-8">
           <div className="flex items-center justify-between px-2 lg:px-0">
             <div className="flex items-center">
-              <h1 className="text-xl font-bold">Coffee Shop</h1>
+              <h1 className="text-xl font-bold">Primo's Coffee Shop</h1>
             </div>
             <div className="flex items-center">
               <ul className="lg:flex hidden gap-x-10">

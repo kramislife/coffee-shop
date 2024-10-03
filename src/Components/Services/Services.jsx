@@ -10,42 +10,41 @@ import {
 } from "@/components/ui/card";
 import { useInView } from "framer-motion";
 
+const coffeeCards = [
+  {
+    id: 1,
+    img: "/beans.jpg",
+    title: "Americano Coffee",
+    description:
+      "A pure, bold brew with no added flavors. Known for its rich, robust taste and invigorating aroma, black coffee highlights the true essence of the coffee bean.",
+    price: "$5.99",
+  },
+  {
+    id: 2,
+    img: "/saltedCaramel.jpg",
+    title: "Salted Caramel",
+    description:
+      "  A delightful blend of rich coffee and the sweet, buttery flavor of caramel, perfectly balanced with a hint of sea salt. It offers a harmonious mix of sweetness and a subtle savory touch.",
+    price: "$4.99",
+  },
+  {
+    id: 3,
+    img: "/macchiatoFrappe.jpg",
+    title: "Caramel Macchiato Frappe",
+    description:
+      "A refreshing blend of bold espresso, creamy milk, and luscious caramel syrup, blended with ice for a smooth, frosty treat.  Topped with a drizzle of caramel, this frappe offers a perfect balance of sweetness.",
+    price: "$2.99",
+  },
+  {
+    id: 4,
+    img: "/latteFreeze.webp",
+    title: "Espreso Latte Freeze",
+    description:
+      "A cool and creamy blend of rich espresso and velvety milk, combined with ice to create a refreshing frozen treat. Perfectly balanced between bold coffee flavors and a smooth, frosty texture.",
+    price: "$6.99",
+  },
+];
 const Services = () => {
-  const coffeeCards = [
-    {
-      id: 1,
-      img: "/beans.jpg",
-      title: "Americano Coffee",
-      description:
-        "A pure, bold brew with no added flavors. Known for its rich, robust taste and invigorating aroma, black coffee highlights the true essence of the coffee bean.",
-      price: "$5.99",
-    },
-    {
-      id: 2,
-      img: "/saltedCaramel.jpg",
-      title: "Salted Caramel",
-      description:
-        "  A delightful blend of rich coffee and the sweet, buttery flavor of caramel, perfectly balanced with a hint of sea salt. It offers a harmonious mix of sweetness and a subtle savory touch.",
-      price: "$4.99",
-    },
-    {
-      id: 3,
-      img: "/macchiatoFrappe.jpg",
-      title: "Caramel Macchiato Frappe",
-      description:
-        "A refreshing blend of bold espresso, creamy milk, and luscious caramel syrup, blended with ice for a smooth, frosty treat.  Topped with a drizzle of caramel, this frappe offers a perfect balance of sweetness.",
-      price: "$2.99",
-    },
-    {
-      id: 4,
-      img: "/latteFreeze.webp",
-      title: "Espreso Latte Freeze",
-      description:
-        "A cool and creamy blend of rich espresso and velvety milk, combined with ice to create a refreshing frozen treat. Perfectly balanced between bold coffee flavors and a smooth, frosty texture.",
-      price: "$6.99",
-    },
-  ];
-
   const servicesRef = useRef(null);
 
   const servicesInView = useInView(servicesRef, { once: true });
@@ -57,10 +56,10 @@ const Services = () => {
   });
 
   return (
-    <section className="bg-background lg:h-[100vh] px-4">
+    <section className="bg-background lg:h-[120vh] px-4">
       <div className="container py-14">
         <h1 className="text-4xl font-bold lg:leading-snug leading-tight text-center">
-          Our Coffee Experience
+          Our Best Seller
         </h1>
         <p className="text-md text-center text-gray-600 max-w-3xl mx-auto py-5 leading-relaxed">
           From sourcing the finest beans to crafting the perfect brew, we offer
@@ -68,7 +67,7 @@ const Services = () => {
           Whether you’re here for a quick cup or to savor every sip, we’ve got
           something for every coffee lover.
         </p>
-        <div className="flex flex-col lg:flex-row lg:space-x-3 lg:space-y-0 space-y-3 justify-center items-center lg:pt-5 pt-4">
+        <div className="flex flex-col lg:flex-row lg:space-x-3 lg:space-y-0 space-y-3 justify-center items-center lg:pt-5 ym-10">
           {coffeeCards.map((card) => (
             <Card
               ref={servicesRef}
