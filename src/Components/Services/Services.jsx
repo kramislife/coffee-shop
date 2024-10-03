@@ -67,7 +67,7 @@ const Services = () => {
           Whether you’re here for a quick cup or to savor every sip, we’ve got
           something for every coffee lover.
         </p>
-        <div className="flex flex-col lg:flex-row lg:space-x-3 lg:space-y-0 space-y-3 justify-center items-center lg:pt-5 ym-10">
+        <div className="flex flex-col lg:flex-row lg:space-x-3 lg:space-y-0 space-y-3 justify-center items-center lg:pt-5">
           {coffeeCards.map((card) => (
             <Card
               ref={servicesRef}
