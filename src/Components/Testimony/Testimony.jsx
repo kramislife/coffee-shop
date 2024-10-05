@@ -67,11 +67,11 @@ const Testimony = () => {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
-              initial={{ opacity: 0, y: 50 }} // Start off slightly below and invisible
-              animate={isInView ? { opacity: 1, y: 0 } : {}} // Animate to visible when in view
+              initial={{ opacity: 0, y: 90 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{
-                duration: 0.5,
-                delay: index * 0.2,
+                duration: 5,
+                delay: index * 2,
               }}
             >
               <Card className="relative shadow-lg text-center flex w-[50vh] justify-center items-center h-[55vh]">
