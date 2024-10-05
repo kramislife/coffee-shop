@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Card, CardContent } from "@/Components/ui/card";
-import { Avatar, AvatarImage } from "@/Components/ui/avatar";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Star } from "lucide-react";
 import { motion, useInView } from "framer-motion"; // Import framer-motion and useInView
 
@@ -67,11 +67,11 @@ const Testimony = () => {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
-              initial={{ opacity: 0, y: 90 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              initial={{ opacity: 0, y: 50 }} // Start off slightly below and invisible
+              animate={isInView ? { opacity: 1, y: 0 } : {}} // Animate to visible when in view
               transition={{
-                duration: 5,
-                delay: index * 2,
+                duration: 1,
+                delay: index * 0.3,
               }}
             >
               <Card className="relative shadow-lg text-center flex w-[50vh] justify-center items-center h-[55vh]">
