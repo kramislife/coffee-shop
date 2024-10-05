@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardContent } from "@/Components/ui/card";
+import { Avatar, AvatarImage } from "@/Components/ui/avatar";
 import { Star } from "lucide-react";
 import { motion, useInView } from "framer-motion"; // Import framer-motion and useInView
 
